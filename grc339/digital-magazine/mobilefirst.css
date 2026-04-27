@@ -1,0 +1,153 @@
+/* css document */
+body {
+    margin: 0;
+}
+
+div.container {
+    max-width: 60em;
+    margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+h1, h2 {
+    font-family: serif;
+}
+
+h1 {
+    width: 4em;
+    margin: 0.75rem;
+}
+
+h2 {
+    font-size: 3em;
+    color: #547898;
+    margin: 0 0.75rem;
+}
+
+.secstory h2 {
+    font-size: 2em;
+}
+
+.thirdstory h2 {
+    font-size: 1.25em;
+    margin: 0 0 .25rem 0;
+}
+
+p {
+    font-family: sans-serif;
+    margin: 0 .75rem 1rem;
+    line-height: 1.5;
+}
+
+nav {
+    margin: 0 .75rem 1rem;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-bottom: 0.2rem;
+    list-style: none;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+nav ul li a {
+    color: #547898;
+}
+
+figure {
+    max-width: 100%;
+    margin: 0;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+figcaption {
+    font-family: sans-serif;
+    font-style: italic;
+    padding: 0.5rem 0.75rem 2rem 0.75rem;
+    color: rgb(100, 100, 100);
+}
+
+section.thirdstory {
+    margin: 0 0.75rem 2rem 0.75rem;
+    padding-top: 1rem;
+    border-top: 1px solid #547898;
+}
+
+section.secstory {
+    margin-bottom: 2rem;
+}
+
+footer {
+    background-color: #547898;
+    color: white;
+    padding: 1rem 0.75rem;
+}
+
+footer p {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+article h2 {
+    margin: 1rem 0.75rem 0.25rem 0.75rem;
+}
+
+aside {
+    background-color: #cbcfff;
+    padding: 1rem;
+}
+
+aside p {
+    margin-bottom: 2rem;
+}
+
+aside .secstory h2 {
+    font-size: 1.5em;
+    
+}
+
+
+/* media query to make nav and margins responsive */
+@media screen and (min-width: 45em) {
+    nav ul li {
+        display: inline;
+        margin-right: 1rem;
+    }
+
+    h1 {
+        margin-bottom: 0.5rem;
+    }
+
+    nav {
+        margin-top: 0;
+    }
+
+    /* remove margin on wide screen */
+    h2,
+    h1,
+    p,
+    article h2,
+    nav,
+    section.thirdstory {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    figcaption {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
