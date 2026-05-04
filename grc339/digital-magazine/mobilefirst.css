@@ -3,8 +3,8 @@ body {
     margin: 0;
 }
 
-div.container {
-    max-width: 60em;
+div.container, div.home-container {
+    max-width: 40em;
     margin: auto;
 }
 
@@ -26,13 +26,14 @@ h2 {
     font-size: 3em;
     color: #547898;
     margin: 0 0.75rem;
+    font-weight: bold;
 }
 
-.secstory h2 {
+.secondary h2 {
     font-size: 2em;
 }
 
-.thirdstory h2 {
+.tertiary h2 {
     font-size: 1.25em;
     margin: 0 0 .25rem 0;
 }
@@ -80,13 +81,13 @@ figcaption {
     color: rgb(100, 100, 100);
 }
 
-section.thirdstory {
+section.tertiary {
     margin: 0 0.75rem 2rem 0.75rem;
     padding-top: 1rem;
     border-top: 1px solid #547898;
 }
 
-section.secstory {
+section.secondary {
     margin-bottom: 2rem;
 }
 
@@ -94,6 +95,8 @@ footer {
     background-color: #547898;
     color: #ffffff;
     padding: 1rem 0.75rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 footer p {
@@ -114,14 +117,14 @@ aside p {
     margin-bottom: 2rem;
 }
 
-aside .secstory h2 {
+aside .secondary h2 {
     font-size: 1.5em;
     
 }
 
 
-/* media query to make nav and margins responsive */
-@media screen and (min-width: 60em) {
+/* media query mobile first */
+@media screen and (min-width: 40em) {
     nav ul li {
         display: inline;
         margin-right: 1rem;
@@ -136,12 +139,7 @@ aside .secstory h2 {
     }
 
     /* remove margin on wide screen */
-    h2,
-    h1,
-    p,
-    article h2,
-    nav,
-    section.thirdstory {
+    h2, h1, p, article h2, nav, section.tertiary {
         margin-left: 0;
         margin-right: 0;
     }
@@ -150,4 +148,100 @@ aside .secstory h2 {
         padding-left: 0;
         padding-right: 0;
     }
+}
+
+/* media query for responsive grid + flex box */
+@media only screen and (min-width: 60em){
+    div.home-container{
+        max-width: 80em;
+        padding: 0 1em;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-gap: 1em;
+    }
+    div.container{
+        max-width: 60em;
+        padding: 0 1em;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-gap: 1em;
+    }
+
+    header, footer{
+        grid-column: 1/3;
+    }
+
+    div.home-container main{
+        display: grid;
+        grid-template-columns: repeat (3, 1fr);
+        grid-gap: 1em;
+    }
+
+    div.home-container aside{
+        background: none;
+        padding: 0;
+        margin-top: 0;
+    }
+    div.container aside{
+        margin-top: 0;
+    }
+
+    /* ~~~~~~index main story~~~~~~~~ */
+    section.mainstory {
+        grid-column: 2/4;
+        grid-row: 1/3;
+        display: flex;
+    }
+
+    /* <a> is flex container b/c immediate parent to h2/p */
+    /* also flex item to section.mainstory */
+    section.mainstory a {
+        flex: 1 0 12em;
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* flex items to <a>*/
+    section.mainstory a figure {
+        flex: 1 0 12em;
+        display: flex;
+    }
+    /* make image cover all of figure */
+    section.mainstory a figure img {
+        object-fit: cover;
+    }
+    section.mainstory a h2 {
+        flex: 0 0 1em;
+    }
+    section.mainstory a p {
+        flex: 0 0 4em;
+    }
+
+    /* ~~~~~~secondary stories~~~~~~~~~~~ */
+    section.secondary {
+        display: flex;
+    }
+
+    section.secondary a {
+        flex: 1 0 12em;
+        display: flex;
+        flex-direction: column;
+    }
+
+    section.secondary a figure {
+        flex: 1 0 12em;
+        display: flex;
+    }
+    /* make image cover all of figure */
+    section.secondary a figure img {
+        object-fit: cover;
+    }
+    section.secondary a h2 {
+        flex: 0 0 1em;
+    }
+    section.secondary a p {
+        flex: 0 0 4em;
+    }
+
+    
 }
