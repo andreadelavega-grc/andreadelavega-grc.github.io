@@ -79,7 +79,7 @@ h3{
 }
 textarea {
 	box-sizing: border-box;
-	display: flex;
+	display: block;
 	width: 100%;
 	height: 6em;
 	background: #fcfcfc;
