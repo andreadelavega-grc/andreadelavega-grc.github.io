@@ -10,7 +10,7 @@ div.container {
 
 a {
     text-decoration: none;
-    color: black;
+    color: #000000;
 }
 
 h1, h2 {
@@ -92,7 +92,7 @@ section.secstory {
 
 footer {
     background-color: #547898;
-    color: white;
+    color: #ffffff;
     padding: 1rem 0.75rem;
 }
 
@@ -121,7 +121,7 @@ aside .secstory h2 {
 
 
 /* media query to make nav and margins responsive */
-@media screen and (min-width: 45em) {
+@media screen and (min-width: 60em) {
     nav ul li {
         display: inline;
         margin-right: 1rem;
