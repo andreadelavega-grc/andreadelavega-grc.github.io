@@ -1,6 +1,9 @@
 /* css document */
+
 body {
     margin: 0;
+    background-color: #fbddb1;
+    color: #241E10;
 }
 
 div.container, div.home-container {
@@ -10,11 +13,11 @@ div.container, div.home-container {
 
 a {
     text-decoration: none;
-    color: #000000;
+    color: #241E10;
 }
 
 h1, h2 {
-    font-family: serif;
+    font-family: "swear-display", serif;
 }
 
 h1 {
@@ -24,9 +27,10 @@ h1 {
 
 h2 {
     font-size: 3em;
-    color: #547898;
+    color: #631E0B;
     margin: 0 0.75rem;
     font-weight: bold;
+    line-height: 1;
 }
 
 .secondary h2 {
@@ -39,9 +43,10 @@ h2 {
 }
 
 p {
-    font-family: sans-serif;
+    font-family: "ibm-plex-serif", serif;
+    color: #241E10;
     margin: 0 .75rem 1rem;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 nav {
@@ -56,12 +61,13 @@ nav ul {
 nav ul li {
     margin-bottom: 0.2rem;
     list-style: none;
-    font-family: sans-serif;
+    font-family: "ibm-plex-serif", serif;
     font-weight: bold;
+    letter-spacing: 0.02em;
 }
 
 nav ul li a {
-    color: #547898;
+    color: #631E0B;
 }
 
 figure {
@@ -75,16 +81,16 @@ img {
 }
 
 figcaption {
-    font-family: sans-serif;
+    font-family: "ibm-plex-serif", serif;
     font-style: italic;
     padding: 0.5rem 0.75rem 2rem 0.75rem;
-    color: rgb(100, 100, 100);
+    color: #241E10;
 }
 
 section.tertiary {
     margin: 0 0.75rem 2rem 0.75rem;
     padding-top: 1rem;
-    border-top: 1px solid #547898;
+    border-top: 1px solid #631E0B;
 }
 
 section.secondary {
@@ -92,15 +98,16 @@ section.secondary {
 }
 
 footer {
-    background-color: #547898;
-    color: #ffffff;
+    background-color: #631E0B;
+    color: #E6BA79;
     padding: 1rem 0.75rem;
     width: 100%;
     box-sizing: border-box;
 }
 
 footer p {
-    font-family: sans-serif;
+    font-family: "ibm-plex-serif", serif;
+    color: #fbddb1;
     margin: 0;
 }
 
@@ -109,7 +116,7 @@ article h2 {
 }
 
 aside {
-    background-color: #cbcfff;
+    background-color: #867832;
     padding: 1rem;
 }
 
@@ -119,12 +126,11 @@ aside p {
 
 aside .secondary h2 {
     font-size: 1.5em;
-    
 }
-
 
 /* media query mobile first */
 @media screen and (min-width: 40em) {
+
     nav ul li {
         display: inline;
         margin-right: 1rem;
@@ -152,6 +158,7 @@ aside .secondary h2 {
 
 /* media query for responsive grid + flex box */
 @media only screen and (min-width: 60em){
+
     div.home-container{
         max-width: 80em;
         padding: 0 1em;
@@ -159,6 +166,7 @@ aside .secondary h2 {
         grid-template-columns: 3fr 1fr;
         grid-gap: 1em;
     }
+
     div.container{
         max-width: 60em;
         padding: 0 1em;
@@ -173,7 +181,7 @@ aside .secondary h2 {
 
     div.home-container main{
         display: grid;
-        grid-template-columns: repeat (3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-gap: 1em;
     }
 
@@ -182,11 +190,13 @@ aside .secondary h2 {
         padding: 0;
         margin-top: 0;
     }
+
     div.container aside{
         margin-top: 0;
     }
 
     /* ~~~~~~index main story~~~~~~~~ */
+
     section.mainstory {
         grid-column: 2/4;
         grid-row: 1/3;
@@ -195,6 +205,7 @@ aside .secondary h2 {
 
     /* <a> is flex container b/c immediate parent to h2/p */
     /* also flex item to section.mainstory */
+
     section.mainstory a {
         flex: 1 0 12em;
         display: flex;
@@ -202,22 +213,28 @@ aside .secondary h2 {
     }
 
     /* flex items to <a>*/
+
     section.mainstory a figure {
         flex: 1 0 12em;
         display: flex;
     }
+
     /* make image cover all of figure */
+
     section.mainstory a figure img {
         object-fit: cover;
     }
+
     section.mainstory a h2 {
         flex: 0 0 1em;
     }
+
     section.mainstory a p {
         flex: 0 0 4em;
     }
 
     /* ~~~~~~secondary stories~~~~~~~~~~~ */
+
     section.secondary {
         display: flex;
     }
@@ -232,16 +249,18 @@ aside .secondary h2 {
         flex: 1 0 12em;
         display: flex;
     }
+
     /* make image cover all of figure */
+
     section.secondary a figure img {
         object-fit: cover;
     }
+
     section.secondary a h2 {
         flex: 0 0 1em;
     }
+
     section.secondary a p {
         flex: 0 0 4em;
     }
-
-    
 }
